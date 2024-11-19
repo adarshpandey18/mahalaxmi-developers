@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "999578971554",
+    "project_id": "mahalaxmi-developer",
+    "storage_bucket": "mahalaxmi-developer.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999578971554:android:de49b9822acecd5d7656fb",
+        "android_client_info": {
+          "package_name": "com.mahalaxmi_developers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999578971554-nn23e5pe4mk9qosgnth5tisksnb14ll1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBusTsWO5otW9kgbWjmi_qUyrs7pZGTI90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999578971554-nn23e5pe4mk9qosgnth5tisksnb14ll1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "999578971554-qj5u74cfu35ce78ipf83j44v1ulbhkpf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mahalaxmiDevelopers"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
