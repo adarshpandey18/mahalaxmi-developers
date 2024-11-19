@@ -96,7 +96,27 @@ class _SignInMobileState extends State<SignInMobile> {
                       ),
                       obscureText: true,
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(
+                      height: 1,
+                    ),
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: GestureDetector(
+                        onTap: () => authProvider.forogtPassowrd(
+                          context: context,
+                          email: email.text,
+                        ),
+                        child: Text(
+                          'Forgot Password ?',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(),
+                          textAlign: TextAlign.right,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

@@ -55,4 +55,12 @@ class AuthProvider extends ChangeNotifier {
     isLoading = false;
     notifyListeners();
   }
+
+  Future<void> forogtPassowrd({required context, required email}) async {
+    isLoading = true;
+    notifyListeners();
+    await _authService.forgotPassword(context, email);
+    isLoading = false;
+    notifyListeners();
+  }
 }

@@ -25,7 +25,7 @@ class AuthService {
       );
 
       // navigation to home screen
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushReplacementNamed(context, '/home');
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
         AlertBox.alertBox(
@@ -131,7 +131,6 @@ class AuthService {
   signOut(BuildContext context) async {
     try {
       // signing out user
-
       await FirebaseAuth.instance.signOut();
     } catch (e) {
       AlertBox.alertBox(
