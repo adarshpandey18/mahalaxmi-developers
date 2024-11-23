@@ -19,4 +19,11 @@ class ImageStrings {
   // building animation
   static String buildingLottieAnimation =
       '${ImageStrings.animationBasePath}building_animation.json';
+
+  // Profile Image 1
+  static String profileImage1 = '${ImageStrings.basePath}profile_image_1.jpg';
+
+  // Profile Image 2
+  static String profileImage2 = '${ImageStrings.basePath}profile_image_2.jpg';
+  
 }

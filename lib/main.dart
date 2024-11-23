@@ -2,10 +2,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mahalaxmi_developers/firebase_options.dart';
 import 'package:mahalaxmi_developers/provider/auth_provider.dart';
+import 'package:mahalaxmi_developers/screen/about/about.dart';
 import 'package:mahalaxmi_developers/screen/authentication/auth%20landing/auth_landing.dart';
 import 'package:mahalaxmi_developers/screen/authentication/auth_wrapper.dart';
 import 'package:mahalaxmi_developers/screen/authentication/sign%20in/sign_in.dart';
 import 'package:mahalaxmi_developers/screen/authentication/sign%20up/sign_up.dart';
+import 'package:mahalaxmi_developers/screen/contact/contact.dart';
 import 'package:mahalaxmi_developers/screen/home/home_screen.dart';
 import 'package:mahalaxmi_developers/screen/splash%20screen/splash_screen.dart';
 import 'package:mahalaxmi_developers/utils/constants/themes/theme.dart';
@@ -16,7 +18,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   runApp(const MyApp());
 }
 
@@ -47,6 +48,8 @@ class MyApp extends StatelessWidget {
           '/sign_in': (context) => const SignIn(),
           '/sign_up': (context) => const SignUp(),
           '/home': (context) => const HomeScreen(),
+          '/about': (context) => const AboutScreen(),
+          '/contact': (context) => const ContactScreen(),
         },
       ),
     );

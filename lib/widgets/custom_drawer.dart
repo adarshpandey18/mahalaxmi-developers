@@ -59,17 +59,21 @@ class CustomDrawer extends StatelessWidget {
                   changeColor: false,
                 ),
                 DrawerListTile(
-                  text: 'Info',
+                  text: 'About',
                   onTap: () {},
                   iconData: FontAwesomeIcons.info,
+                  changeColor: false,
+                ),
+                DrawerListTile(
+                  text: 'Contact',
+                  onTap: () {},
+                  iconData: FontAwesomeIcons.phone,
                   changeColor: false,
                 ),
                 const Spacer(),
                 DrawerListTile(
                   text: 'Sign Out',
-                  onTap: () {
-                    authProvider.signOut(context: context);
-                  },
+                  onTap: () => authProvider.signOut(context: context),
                   iconData: Icons.logout,
                   changeColor: true,
                 ),

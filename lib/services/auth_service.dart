@@ -166,7 +166,7 @@ class AuthService {
   }
 
   /// Sign Up method using Google
-  Future googleSignIn({required BuildContext context}) async {
+  googleSignIn({required BuildContext context}) async {
     try {
       // Trigger the authentication flow
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();

@@ -32,8 +32,9 @@ class HomeScreenDesktop extends StatelessWidget {
                     children: [
                       NavbarItems(text: 'Home', route: 'home'),
                       NavbarItems(text: 'Categories', route: 'categories'),
+                      NavbarItems(text: 'Agents', route: 'agent'),
                       NavbarItems(text: 'About', route: 'about'),
-                      NavbarItems(text: 'Contact', route: 'Contact'),
+                      NavbarItems(text: 'Contact', route: 'contact'),
                     ],
                   ),
                 ),

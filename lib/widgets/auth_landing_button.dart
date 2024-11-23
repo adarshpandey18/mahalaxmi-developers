@@ -27,8 +27,9 @@ class AuthLandingButton extends StatelessWidget {
         builder: (context, sizingInformation) {
           final textStyle =
               sizingInformation.deviceScreenType == DeviceScreenType.desktop
-                  ? Theme.of(context).textTheme.displayMedium?.copyWith(
+                  ? Theme.of(context).textTheme.displayLarge?.copyWith(
                         fontWeight: FontWeight.normal,
+                        fontSize: 24,
                       )
                   : Theme.of(context).textTheme.bodyLarge;
 
