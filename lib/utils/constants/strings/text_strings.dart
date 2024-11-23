@@ -23,4 +23,13 @@ class TextStrings {
   static String coOwnerDescription = "Owner Description";
   // quote by coOwner
   static String coOwnerQuote = "\"Quote by Co-Owner\"";
+
+  // Contact Messgae
+  static String contactMessage =
+      "Have a question or need assistance? We're here to help! Get in touch with us, and we'll respond as soon as possible.";
+
+  // Address
+  static String address = "The address of the company";
+  // Phone number
+  static String phoneNumer = "+91-9871234567";
 }

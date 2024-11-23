@@ -42,31 +42,41 @@ class CustomDrawer extends StatelessWidget {
               children: [
                 DrawerListTile(
                   text: 'Profile',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/profile');
+                  },
                   iconData: Icons.person,
                   changeColor: false,
                 ),
                 DrawerListTile(
                   text: 'Categories',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/categories');
+                  },
                   iconData: FontAwesomeIcons.building,
                   changeColor: false,
                 ),
                 DrawerListTile(
                   text: 'Agent',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/agent');
+                  },
                   iconData: FontAwesomeIcons.lightbulb,
                   changeColor: false,
                 ),
                 DrawerListTile(
                   text: 'About',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/about');
+                  },
                   iconData: FontAwesomeIcons.info,
                   changeColor: false,
                 ),
                 DrawerListTile(
                   text: 'Contact',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/contact');
+                  },
                   iconData: FontAwesomeIcons.phone,
                   changeColor: false,
                 ),

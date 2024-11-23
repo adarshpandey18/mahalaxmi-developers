@@ -16,6 +16,10 @@ class ImageStrings {
   static String nightSideBuilding =
       '${ImageStrings.basePath}building_side_facing_night.JPG';
 
+  // Building up facing
+  static String buildingUpFacingNight =
+      '${ImageStrings.basePath}building_side_facing_night.JPG';
+
   // building animation
   static String buildingLottieAnimation =
       '${ImageStrings.animationBasePath}building_animation.json';
@@ -25,5 +29,4 @@ class ImageStrings {
 
   // Profile Image 2
   static String profileImage2 = '${ImageStrings.basePath}profile_image_2.jpg';
-  
 }
