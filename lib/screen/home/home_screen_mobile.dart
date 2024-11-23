@@ -20,24 +20,14 @@ class HomeScreenMobile extends StatelessWidget {
           builder: (context) {
             return IconButton(
               onPressed: () => Scaffold.of(context).openDrawer(),
-              icon: const FaIcon(
-                FontAwesomeIcons.bars,
+              icon: FaIcon(
+                FontAwesomeIcons.barsStaggered,
                 size: 24,
+                color: Theme.of(context).primaryColorLight,
               ),
             );
           },
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.search,
-              size: 24,
-            ),
-            onPressed: () {
-              return;
-            },
-          ),
-        ],
       ),
       drawer: const CustomDrawer(),
     );
