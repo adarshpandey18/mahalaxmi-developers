@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mahalaxmi_developers/provider/auth_provider.dart';
+import 'package:mahalaxmi_developers/utils/constants/strings/image_strings.dart';
 import 'package:mahalaxmi_developers/widgets/logo_widget.dart';
 import 'package:mahalaxmi_developers/widgets/navbar_items.dart';
 import 'package:provider/provider.dart';
@@ -52,6 +53,23 @@ class HomeScreenDesktop extends StatelessWidget {
             const SizedBox(
               width: 15,
             ),
+            Column(
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            ImageStrings.splashScreenImageDesktop,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            )
           ],
         ),
       ),

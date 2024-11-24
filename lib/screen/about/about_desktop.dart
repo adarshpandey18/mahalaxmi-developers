@@ -17,43 +17,44 @@ class AboutDesktopScreen extends StatelessWidget {
             vertical: 12.0,
             horizontal: 112.0,
           ),
-          child: Flexible(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Center(
-                  child: Column(
-                    children: [
-                      Text(
-                        TextStrings.companyName,
-                        style:
-                            Theme.of(context).textTheme.displayMedium!.copyWith(
-                                  height: 1,
-                                  fontFamily: GoogleFonts.cinzel().fontFamily,
-                                  fontSize: 64,
-                                ),
-                      ),
-                      Text(
-                        TextStrings.companySuffix,
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              height: 0.6,
-                              letterSpacing: 1.2,
-                              fontSize: 28,
-                            ),
-                      ),
-                    ],
-                  ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: Column(
+                  children: [
+                    Text(
+                      TextStrings.companyName,
+                      style:
+                          Theme.of(context).textTheme.displayMedium!.copyWith(
+                                height: 1,
+                                fontFamily: GoogleFonts.cinzel().fontFamily,
+                                fontSize: 64,
+                              ),
+                    ),
+                    Text(
+                      TextStrings.companySuffix,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            height: 0.6,
+                            letterSpacing: 1.2,
+                            fontSize: 28,
+                          ),
+                    ),
+                  ],
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Divider(
-                  thickness: 4,
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                Row(
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Divider(
+                thickness: 4,
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              SizedBox(
+                height: 450,
+                child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -97,10 +98,13 @@ class AboutDesktopScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 80,
-                ),
-                Row(
+              ),
+              const SizedBox(
+                height: 80,
+              ),
+              SizedBox(
+                height: 450,
+                child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -144,8 +148,8 @@ class AboutDesktopScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

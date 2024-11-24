@@ -106,21 +106,21 @@ class ContactDesktopScreen extends StatelessWidget {
                           const SizedBox(
                             height: 40,
                           ),
-                          // InfoWithIcon(
-                          //   function: hf.urlLauncher(
-                          //       url: 'github.com/adarshpandey18/'),
-                          //   iconData: FontAwesomeIcons.locationPin,
-                          //   text: TextStrings.address,
-                          // ),
-                          // const SizedBox(
-                          //   height: 20,
-                          // ),
-                          // InfoWithIcon(
-                          //   function: hf.launchPhoneNumber(
-                          //       number: TextStrings.phoneNumer),
-                          //   iconData: FontAwesomeIcons.phone,
-                          //   text: TextStrings.phoneNumer,
-                          // ),
+                          InfoWithIcon(
+                            function: hf.urlLauncher(
+                                url: 'github.com/adarshpandey18/'),
+                            iconData: FontAwesomeIcons.locationPin,
+                            text: TextStrings.address,
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          InfoWithIcon(
+                            function: hf.launchPhoneNumber(
+                                number: TextStrings.phoneNumer),
+                            iconData: FontAwesomeIcons.phone,
+                            text: TextStrings.phoneNumer,
+                          ),
                         ],
                       ),
                     ),
