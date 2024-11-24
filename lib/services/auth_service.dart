@@ -136,6 +136,8 @@ class AuthService {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('User Sign Out Successfully')),
       );
+
+      Navigator.pushReplacementNamed(context, '/auth_landing');
     } catch (e) {
       AlertBox.alertBox(
         title: 'Exception',

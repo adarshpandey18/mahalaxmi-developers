@@ -6,6 +6,7 @@ import 'package:mahalaxmi_developers/provider/auth_provider.dart';
 import 'package:mahalaxmi_developers/screen/about/about.dart';
 import 'package:mahalaxmi_developers/screen/admin/admin.dart';
 import 'package:mahalaxmi_developers/screen/admin/authentication/admin_authentication.dart';
+import 'package:mahalaxmi_developers/screen/admin/property%20management/property_management.dart';
 import 'package:mahalaxmi_developers/screen/authentication/auth%20landing/auth_landing.dart';
 import 'package:mahalaxmi_developers/screen/authentication/auth_wrapper.dart';
 import 'package:mahalaxmi_developers/screen/authentication/sign%20in/sign_in.dart';
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
           '/agents': (context) => const AgentsScreen(),
           '/admin': (context) => const AdminScreen(),
           '/admin_authentication': (context) => const AdminAuthentication(),
+          '/property_management': (context) => const PropertyManagementScreen(),
         },
       ),
     );

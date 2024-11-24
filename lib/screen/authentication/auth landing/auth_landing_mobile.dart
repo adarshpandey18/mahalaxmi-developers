@@ -98,7 +98,19 @@ class AuthLandingMobile extends StatelessWidget {
                     onTap: () {},
                   ),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(
+                  context,
+                  '/admin_authentication',
+                ),
+                child: const Text(
+                  'Are you an Admin?',
+                ),
+              ),
             ],
           ),
         ),

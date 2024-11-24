@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mahalaxmi_developers/provider/admin_auth_provider.dart';
 import 'package:mahalaxmi_developers/utils/constants/colors/app_colors.dart';
 import 'package:mahalaxmi_developers/widgets/auth_landing_button.dart';
-import 'package:mahalaxmi_developers/widgets/custom_divider.dart';
-import 'package:mahalaxmi_developers/widgets/icon_card.dart';
 import 'package:provider/provider.dart';
 
 class AdminAuthenticationMobileScreen extends StatefulWidget {
