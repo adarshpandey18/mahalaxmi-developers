@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class InfoWithIcon extends StatefulWidget {
   final IconData iconData;
   final String text;
-  final VoidCallbackAction function;
-  const InfoWithIcon(
-      {super.key,
-      required this.iconData,
-      required this.text,
-      required this.function});
+  final VoidCallback function;
+
+  const InfoWithIcon({
+    super.key,
+    required this.iconData,
+    required this.text,
+    required this.function,
+  });
 
   @override
   State<InfoWithIcon> createState() => _InfoWithIconState();
@@ -16,18 +18,15 @@ class InfoWithIcon extends StatefulWidget {
 
 class _InfoWithIconState extends State<InfoWithIcon> {
   var isHovering = false;
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Icon(widget.iconData),
-        const SizedBox(
-          width: 20,
-        ),
+        const SizedBox(width: 20),
         GestureDetector(
-          onTap: () {
-            widget.function;
-          },
+          onTap: () => widget.function(),
           child: MouseRegion(
             onEnter: (event) {
               setState(() {

@@ -132,6 +132,10 @@ class AuthService {
     try {
       // signing out user
       await FirebaseAuth.instance.signOut();
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('User Sign Out Successfully')),
+      );
     } catch (e) {
       AlertBox.alertBox(
         title: 'Exception',

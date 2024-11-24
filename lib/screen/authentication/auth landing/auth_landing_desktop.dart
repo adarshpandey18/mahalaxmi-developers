@@ -118,7 +118,19 @@ class AuthLandingDesktop extends StatelessWidget {
                         onTap: () {},
                       ),
                     ],
-                  )
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(
+                      context,
+                      '/admin_authentication',
+                    ),
+                    child: const Text(
+                      'Are you an Admin?',
+                    ),
+                  ),
                 ],
               ),
             ),

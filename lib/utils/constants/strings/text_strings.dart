@@ -30,6 +30,10 @@ class TextStrings {
 
   // Address
   static String address = "The address of the company";
+  // address link
+  static String addressLink = "www.github.com/adarshpandey18/";
   // Phone number
   static String phoneNumer = "+91-9871234567";
+  // phone number link 
+  static String phoneNumberLink = "9370291694";
 }

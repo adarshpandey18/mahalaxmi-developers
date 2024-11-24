@@ -10,14 +10,12 @@ import 'package:mahalaxmi_developers/widgets/info_with_icon.dart';
 class ContactDesktopScreen extends StatelessWidget {
   ContactDesktopScreen({super.key});
   final HelperFunctions hf = HelperFunctions();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 112.0,
-          vertical: 12.0,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 112.0, vertical: 12.0),
         child: Column(
           children: [
             Center(
@@ -42,15 +40,9 @@ class ContactDesktopScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Divider(
-              thickness: 4,
-            ),
-            const SizedBox(
-              height: 80,
-            ),
+            const SizedBox(height: 20),
+            const Divider(thickness: 4),
+            const SizedBox(height: 80),
             Container(
               height: 700,
               decoration: BoxDecoration(
@@ -70,9 +62,7 @@ class ContactDesktopScreen extends StatelessWidget {
                         ),
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage(
-                            ImageStrings.buildingUpFacingNight,
-                          ),
+                          image: AssetImage(ImageStrings.buildingUpFacingNight),
                         ),
                       ),
                     ),
@@ -93,9 +83,7 @@ class ContactDesktopScreen extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                           ),
-                          const SizedBox(
-                            height: 40,
-                          ),
+                          const SizedBox(height: 40),
                           Text(
                             TextStrings.contactMessage,
                             style: Theme.of(context)
@@ -103,21 +91,18 @@ class ContactDesktopScreen extends StatelessWidget {
                                 .titleLarge!
                                 .copyWith(),
                           ),
-                          const SizedBox(
-                            height: 40,
-                          ),
+                          const SizedBox(height: 40),
                           InfoWithIcon(
-                            function: hf.urlLauncher(
-                                url: 'github.com/adarshpandey18/'),
+                            function: () => hf.urlLauncher(
+                              url: TextStrings.addressLink,
+                            ),
                             iconData: FontAwesomeIcons.locationPin,
                             text: TextStrings.address,
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
+                          const SizedBox(height: 20),
                           InfoWithIcon(
-                            function: hf.launchPhoneNumber(
-                                number: TextStrings.phoneNumer),
+                            function: () => hf.launchPhoneNumber(
+                                number: TextStrings.phoneNumberLink),
                             iconData: FontAwesomeIcons.phone,
                             text: TextStrings.phoneNumer,
                           ),
