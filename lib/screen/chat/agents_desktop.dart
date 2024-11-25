@@ -87,7 +87,7 @@ class _AgentsDesktopScreenState extends State<AgentsDesktopScreen> {
                         crossAxisCount: 2,
                         childAspectRatio: 3,
                         mainAxisSpacing: 40,
-                        crossAxisSpacing: 40,
+                        crossAxisSpacing: 40, 
                       ),
                       itemCount: chatProvider.getAgentList().length,
                       itemBuilder: (context, index) {
