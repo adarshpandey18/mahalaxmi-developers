@@ -7,18 +7,28 @@ import 'package:mahalaxmi_developers/widgets/logo_widget.dart';
 import 'package:mahalaxmi_developers/widgets/navbar_items.dart';
 import 'package:provider/provider.dart';
 
-class AgentsDesktopScreen extends StatelessWidget {
+class AgentsDesktopScreen extends StatefulWidget {
   const AgentsDesktopScreen({super.key});
+
+  @override
+  _AgentsDesktopScreenState createState() => _AgentsDesktopScreenState();
+}
+
+class _AgentsDesktopScreenState extends State<AgentsDesktopScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Fetch agents if not already fetched
+    final chatProvider = Provider.of<ChatProvider>(context, listen: false);
+    if (chatProvider.getAgentList().isEmpty && !chatProvider.isLoading) {
+      chatProvider.getAgents();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final authProvider = Provider.of<AuthProvider>(context);
     final chatProvider = Provider.of<ChatProvider>(context);
-
-    // Fetch agents if they haven't been fetched already
-    if (chatProvider.getAgentList().isEmpty && !chatProvider.isLoading) {
-      chatProvider.getAgents();
-    }
 
     return Scaffold(
       body: Padding(
@@ -28,9 +38,7 @@ class AgentsDesktopScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const SizedBox(
-                  width: 15,
-                ),
+                const SizedBox(width: 15),
                 GestureDetector(
                   onTap: () => Navigator.pushNamed(context, '/home'),
                   child: const LogoWidget(),
@@ -63,16 +71,12 @@ class AgentsDesktopScreen extends StatelessWidget {
                   onPressed: () => authProvider.signOut(context: context),
                   minSize: 33,
                   color: Theme.of(context).highlightColor,
-                  child: Text(
-                    'Sign Out',
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  ),
+                  child: Text('Sign Out',
+                      style: Theme.of(context).textTheme.bodyMedium),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 75,
-            ),
+            const SizedBox(height: 75),
             // Check loading state and display accordingly
             chatProvider.isLoading
                 ? const Center(child: CircularProgressIndicator())

@@ -22,5 +22,7 @@ class ChatProvider extends ChangeNotifier {
     }
   }
 
-  List<Agent> getAgentList() => agents; // To return the agents list
+  List<Agent> getAgentList() {
+    return agents;
+  }
 }
