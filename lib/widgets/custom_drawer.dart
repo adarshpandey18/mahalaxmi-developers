@@ -59,7 +59,7 @@ class CustomDrawer extends StatelessWidget {
                 DrawerListTile(
                   text: 'Agent',
                   onTap: () {
-                    Navigator.pushNamed(context, '/agent');
+                    Navigator.pushNamed(context, '/agents');
                   },
                   iconData: FontAwesomeIcons.lightbulb,
                   changeColor: false,

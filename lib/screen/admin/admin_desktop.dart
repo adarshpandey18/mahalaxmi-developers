@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:mahalaxmi_developers/utils/cateogory/admin_features.dart';
 import 'package:mahalaxmi_developers/widgets/feature_container.dart';
 import 'package:mahalaxmi_developers/widgets/logo_widget.dart';

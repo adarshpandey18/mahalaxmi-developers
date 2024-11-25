@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PropertyManagementMobile extends StatelessWidget {
-  const PropertyManagementMobile({super.key});
+class AddPropertyDesktop extends StatelessWidget {
+  const AddPropertyDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: [
-          
-        ],
+        children: [],
       ),
     );
   }

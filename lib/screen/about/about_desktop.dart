@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mahalaxmi_developers/provider/auth_provider.dart';
 import 'package:mahalaxmi_developers/utils/constants/size/app_size.dart';
 import 'package:mahalaxmi_developers/utils/constants/strings/image_strings.dart';
 import 'package:mahalaxmi_developers/utils/constants/strings/text_strings.dart';
+import 'package:mahalaxmi_developers/widgets/desktop_navbar.dart';
+import 'package:provider/provider.dart';
 
 class AboutDesktopScreen extends StatelessWidget {
   const AboutDesktopScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final authProvider = Provider.of<AuthProvider>(context);
     return Scaffold(
       appBar: null,
       body: SingleChildScrollView(
@@ -20,6 +24,13 @@ class AboutDesktopScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              DesktopNavbar(
+                authProvider: authProvider,
+                currentPage: 'About',
+              ),
+              const SizedBox(
+                height: 75,
+              ),
               Center(
                 child: Column(
                   children: [

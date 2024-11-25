@@ -1,11 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mahalaxmi_developers/provider/auth_provider.dart';
 import 'package:mahalaxmi_developers/utils/constants/size/app_size.dart';
 import 'package:mahalaxmi_developers/utils/constants/strings/image_strings.dart';
 import 'package:mahalaxmi_developers/utils/constants/strings/text_strings.dart';
 import 'package:mahalaxmi_developers/utils/helper/helper_functions.dart';
+import 'package:mahalaxmi_developers/widgets/desktop_navbar.dart';
 import 'package:mahalaxmi_developers/widgets/info_with_icon.dart';
+import 'package:provider/provider.dart';
 
 class ContactDesktopScreen extends StatelessWidget {
   ContactDesktopScreen({super.key});
@@ -13,109 +17,123 @@ class ContactDesktopScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authProvider = Provider.of<AuthProvider>(context);
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 112.0, vertical: 12.0),
-        child: Column(
-          children: [
-            Center(
-              child: Column(
-                children: [
-                  Text(
-                    TextStrings.companyName,
-                    style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                          height: 1,
-                          fontFamily: GoogleFonts.cinzel().fontFamily,
-                          fontSize: 64,
-                        ),
-                  ),
-                  Text(
-                    TextStrings.companySuffix,
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          height: 0.6,
-                          letterSpacing: 1.2,
-                          fontSize: 28,
-                        ),
-                  ),
-                ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding:
+              const EdgeInsets.symmetric(horizontal: 112.0, vertical: 12.0),
+          child: Column(
+            children: [
+              Center(
+                child: Column(
+                  children: [
+                    DesktopNavbar(
+                      authProvider: authProvider,
+                      currentPage: 'Contact',
+                    ),
+                    const SizedBox(
+                      height: 75,
+                    ),
+                    Text(
+                      TextStrings.companyName,
+                      style:
+                          Theme.of(context).textTheme.displayMedium!.copyWith(
+                                height: 1,
+                                fontFamily: GoogleFonts.cinzel().fontFamily,
+                                fontSize: 64,
+                              ),
+                    ),
+                    Text(
+                      TextStrings.companySuffix,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            height: 0.6,
+                            letterSpacing: 1.2,
+                            fontSize: 28,
+                          ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            const Divider(thickness: 4),
-            const SizedBox(height: 80),
-            Container(
-              height: 700,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: Theme.of(context).highlightColor,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(12),
-                          bottomLeft: Radius.circular(12),
-                        ),
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage(ImageStrings.buildingUpFacingNight),
+              const SizedBox(height: 20),
+              const Divider(thickness: 4),
+              const SizedBox(height: 80),
+              Container(
+                height: 500,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Theme.of(context).highlightColor,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(12),
+                            bottomLeft: Radius.circular(12),
+                          ),
+                          image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image:
+                                AssetImage(ImageStrings.buildingUpFacingNight),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Column(
-                        children: [
-                          Text(
-                            'CONTACT US',
-                            style: Theme.of(context)
-                                .textTheme
-                                .displayLarge!
-                                .copyWith(
-                                  fontSize: AppSize.largeText + 3,
-                                  fontFamily: GoogleFonts.cinzel().fontFamily,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
-                          const SizedBox(height: 40),
-                          Text(
-                            TextStrings.contactMessage,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge!
-                                .copyWith(),
-                          ),
-                          const SizedBox(height: 40),
-                          InfoWithIcon(
-                            function: () => hf.urlLauncher(
-                              url: TextStrings.addressLink,
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              'CONTACT US',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .displayLarge!
+                                  .copyWith(
+                                    fontSize: AppSize.largeText + 3,
+                                    fontFamily: GoogleFonts.cinzel().fontFamily,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
-                            iconData: FontAwesomeIcons.locationPin,
-                            text: TextStrings.address,
-                          ),
-                          const SizedBox(height: 20),
-                          InfoWithIcon(
-                            function: () => hf.launchPhoneNumber(
-                                number: TextStrings.phoneNumberLink),
-                            iconData: FontAwesomeIcons.phone,
-                            text: TextStrings.phoneNumer,
-                          ),
-                        ],
+                            const SizedBox(height: 40),
+                            Text(
+                              TextStrings.contactMessage,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge!
+                                  .copyWith(),
+                            ),
+                            const SizedBox(height: 40),
+                            InfoWithIcon(
+                              function: () => hf.urlLauncher(
+                                url: TextStrings.addressLink,
+                              ),
+                              iconData: FontAwesomeIcons.locationPin,
+                              text: TextStrings.address,
+                            ),
+                            const SizedBox(height: 20),
+                            InfoWithIcon(
+                              function: () => hf.launchPhoneNumber(
+                                  number: TextStrings.phoneNumberLink),
+                              iconData: FontAwesomeIcons.phone,
+                              text: TextStrings.phoneNumer,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 }
+

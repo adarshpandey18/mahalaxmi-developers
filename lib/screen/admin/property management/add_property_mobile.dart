@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PropertyManagementDesktop extends StatelessWidget {
-  const PropertyManagementDesktop({super.key});
+class AddPropertyMobile extends StatelessWidget {
+  const AddPropertyMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
