@@ -19,12 +19,18 @@ class IconCard extends StatefulWidget {
 }
 
 class _IconCardState extends State<IconCard> {
-  late bool isHovering;
+  late ValueNotifier<bool> isHoveringNotifier;
 
   @override
   void initState() {
     super.initState();
-    isHovering = false;
+    isHoveringNotifier = ValueNotifier<bool>(false);
+  }
+
+  @override
+  void dispose() {
+    isHoveringNotifier.dispose();
+    super.dispose();
   }
 
   @override
@@ -37,47 +43,48 @@ class _IconCardState extends State<IconCard> {
           onTap: widget.onTap,
           child: MouseRegion(
             onEnter: (event) {
-              setState(() {
-                isHovering = true;
-              });
+              isHoveringNotifier.value = true;
             },
             onExit: (event) {
-              setState(() {
-                isHovering = false;
-              });
+              isHoveringNotifier.value = false;
             },
-            child: Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: AppColors.navyBlue,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Icon(
-                    widget.icon,
-                    size: isDesktop ? 32 : 24,
-                    color: AppColors.blueGray,
+            child: ValueListenableBuilder<bool>(
+              valueListenable: isHoveringNotifier,
+              builder: (context, isHovering, child) {
+                return Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: AppColors.navyBlue,
+                    borderRadius: BorderRadius.circular(8),
                   ),
-                  Visibility(
-                      visible: isHovering, child: const SizedBox(width: 8)),
-                  AnimatedOpacity(
-                    opacity: isHovering ? 1.0 : 0.0,
-                    duration: const Duration(milliseconds: 300),
-                    child: Visibility(
-                      visible: isHovering,
-                      child: Text(
-                        widget.text,
-                        style: const TextStyle(
-                          color: AppColors.blueGray,
-                          fontSize: 18,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        widget.icon,
+                        size: isDesktop ? 32 : 24,
+                        color: AppColors.blueGray,
+                      ),
+                      Visibility(
+                          visible: isHovering, child: const SizedBox(width: 8)),
+                      AnimatedOpacity(
+                        opacity: isHovering ? 1.0 : 0.0,
+                        duration: const Duration(milliseconds: 300),
+                        child: Visibility(
+                          visible: isHovering,
+                          child: Text(
+                            widget.text,
+                            style: const TextStyle(
+                              color: AppColors.blueGray,
+                              fontSize: 18,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
+                );
+              },
             ),
           ),
         );

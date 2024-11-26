@@ -21,7 +21,7 @@ class AdminFeatures {
     },
     {
       'name': 'Chat with user',
-      'route': '/chat',
+      'route': '/admin_userlist',
       'iconData': FontAwesomeIcons.solidMessage,
     },
     {

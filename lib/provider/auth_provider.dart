@@ -4,6 +4,7 @@ import 'package:mahalaxmi_developers/services/auth_service.dart';
 class AuthProvider extends ChangeNotifier {
   final AuthService _authService = AuthService();
   bool isLoading = false;
+  
 
   Future<void> signUp({
     required String name,
@@ -63,5 +64,4 @@ class AuthProvider extends ChangeNotifier {
     isLoading = false;
     notifyListeners();
   }
-
 }

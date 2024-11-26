@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mahalaxmi_developers/provider/auth_provider.dart';
 import 'package:mahalaxmi_developers/provider/chat_provider.dart';
+import 'package:mahalaxmi_developers/services/chat_service.dart';
 import 'package:mahalaxmi_developers/widgets/agent_card.dart';
 import 'package:mahalaxmi_developers/widgets/logo_widget.dart';
 import 'package:mahalaxmi_developers/widgets/navbar_items.dart';
@@ -87,7 +88,7 @@ class _AgentsDesktopScreenState extends State<AgentsDesktopScreen> {
                         crossAxisCount: 2,
                         childAspectRatio: 3,
                         mainAxisSpacing: 40,
-                        crossAxisSpacing: 40, 
+                        crossAxisSpacing: 40,
                       ),
                       itemCount: chatProvider.getAgentList().length,
                       itemBuilder: (context, index) {

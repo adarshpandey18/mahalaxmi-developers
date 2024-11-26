@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mahalaxmi_developers/screen/chat/agents_desktop.dart';
-import 'package:mahalaxmi_developers/screen/chat/agents_mobile.dart';
+import 'package:mahalaxmi_developers/screen/agents/agents_desktop.dart';
+import 'package:mahalaxmi_developers/screen/agents/agents_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class AgentsScreen extends StatelessWidget {

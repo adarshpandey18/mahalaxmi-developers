@@ -7,12 +7,13 @@ import 'package:mahalaxmi_developers/provider/chat_provider.dart';
 import 'package:mahalaxmi_developers/screen/about/about.dart';
 import 'package:mahalaxmi_developers/screen/admin/admin.dart';
 import 'package:mahalaxmi_developers/screen/admin/authentication/admin_authentication.dart';
+import 'package:mahalaxmi_developers/screen/admin/chat/admin_user_list.dart';
 import 'package:mahalaxmi_developers/screen/admin/property%20management/add_property.dart';
 import 'package:mahalaxmi_developers/screen/authentication/auth%20landing/auth_landing.dart';
 import 'package:mahalaxmi_developers/screen/authentication/auth_wrapper.dart';
 import 'package:mahalaxmi_developers/screen/authentication/sign%20in/sign_in.dart';
 import 'package:mahalaxmi_developers/screen/authentication/sign%20up/sign_up.dart';
-import 'package:mahalaxmi_developers/screen/chat/agents.dart';
+import 'package:mahalaxmi_developers/screen/agents/agents.dart';
 import 'package:mahalaxmi_developers/screen/contact/contact.dart';
 import 'package:mahalaxmi_developers/screen/home/home_screen.dart';
 import 'package:mahalaxmi_developers/screen/splash%20screen/splash_screen.dart';
@@ -64,6 +65,7 @@ class MyApp extends StatelessWidget {
           '/admin': (context) => const AdminScreen(),
           '/admin_authentication': (context) => const AdminAuthentication(),
           '/add_property': (context) => const AddPropertyScreen(),
+          '/admin_userlist': (context) => const AdminUserList(),
         },
       ),
     );

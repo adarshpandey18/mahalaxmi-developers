@@ -1,10 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mahalaxmi_developers/provider/auth_provider.dart';
 import 'package:mahalaxmi_developers/utils/constants/strings/image_strings.dart';
 import 'package:mahalaxmi_developers/widgets/desktop_navbar.dart';
-import 'package:mahalaxmi_developers/widgets/logo_widget.dart';
-import 'package:mahalaxmi_developers/widgets/navbar_items.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreenDesktop extends StatelessWidget {
