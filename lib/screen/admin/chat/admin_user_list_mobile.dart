@@ -23,7 +23,7 @@ class _AdminUserListMobileState extends State<AdminUserListMobile> {
     final chatProvider = Provider.of<ChatProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AGENTS'),
+        title: const Text('USERS'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

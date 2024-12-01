@@ -5,13 +5,15 @@ import 'package:mahalaxmi_developers/widgets/alert_box.dart';
 class AdminAuthProvider extends ChangeNotifier {
   bool isLoading = false;
   String? errorMessage;
-  final String adminUID = "XyJA6IQovuSuF5smDtR6nlrEKgT2";
-  final String adminName = "Admin1";
-  final String adminEmail = "admin1@admin.com";
-  Future<void> signIn(
-      {required String email,
-      required String password,
-      required BuildContext context}) async {
+  String? adminUID; // To hold the dynamic UID
+  String? adminName; // To hold the dynamic name
+  String? adminEmail; // To hold the dynamic email
+
+  Future<void> signIn({
+    required String email,
+    required String password,
+    required BuildContext context,
+  }) async {
     isLoading = true;
     errorMessage = null;
     notifyListeners();
@@ -26,11 +28,21 @@ class AdminAuthProvider extends ChangeNotifier {
 
       // Check if the admin is found
       if (querySnapshot.docs.isNotEmpty) {
-        // Successfully signed in, do something (maybe notify)
+        // Extract the admin details from the document
+        var adminDoc = querySnapshot.docs.first;
+        adminUID = adminDoc['uid']; // Get the document ID as UID
+        adminName = adminDoc['name']; // Get the admin's name from the document
+        adminEmail =
+            adminDoc['email']; // Get the admin's email from the document
+
+        // Successfully signed in
         errorMessage = 'Admin Sign In Successfully';
+
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Admin Sign In Successfully')),
         );
+
+        // Navigate to the admin screen after successful login
         Navigator.pushReplacementNamed(context, '/admin');
       } else {
         errorMessage = 'Admin not found or incorrect password.';

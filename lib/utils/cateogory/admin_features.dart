@@ -24,10 +24,10 @@ class AdminFeatures {
       'route': '/admin_userlist',
       'iconData': FontAwesomeIcons.solidMessage,
     },
-    {
-      'name': 'User Dashboard',
-      'route': '/user_dashboard',
-      'iconData': FontAwesomeIcons.solidUser,
-    },
+    // {
+    //   'name': 'User Dashboard',
+    //   'route': '/user_dashboard',
+    //   'iconData': FontAwesomeIcons.solidUser,
+    // },
   ];
 }

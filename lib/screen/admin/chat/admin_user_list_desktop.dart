@@ -26,6 +26,9 @@ class _AdminUserListDesktopState extends State<AdminUserListDesktop> {
   Widget build(BuildContext context) {
     final chatProvider = Provider.of<ChatProvider>(context);
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('USERS'),
+      ),
       body: Column(
         children: [
           chatProvider.isLoading

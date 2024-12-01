@@ -192,14 +192,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "10.7.0"
-  google_auth:
-    dependency: "direct main"
-    description:
-      name: google_auth
-      sha256: "5f486b6d21e0d12c4541e36baf9c990512a887cd8aec9dd5db31116b645969fd"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.3"
   google_fonts:
     dependency: "direct main"
     description:

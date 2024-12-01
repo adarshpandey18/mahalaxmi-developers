@@ -23,17 +23,29 @@ class AdminChatMobile extends StatefulWidget {
 
 class _AdminChatMobileState extends State<AdminChatMobile> {
   late final TextEditingController textController;
-
+  FocusNode myFocusNode = FocusNode();
   @override
   void initState() {
     super.initState();
     textController = TextEditingController();
+    myFocusNode.addListener(() {
+      if (myFocusNode.hasFocus) {
+        Future.delayed(const Duration(milliseconds: 300), () => scrollDown());
+      }
+    });
   }
 
   @override
   void dispose() {
     textController.dispose();
+    myFocusNode.dispose();
     super.dispose();
+  }
+
+  final ScrollController scrollController = ScrollController();
+  void scrollDown() {
+    scrollController.animateTo(scrollController.position.maxScrollExtent,
+        duration: const Duration(seconds: 1), curve: Curves.fastOutSlowIn);
   }
 
   @override

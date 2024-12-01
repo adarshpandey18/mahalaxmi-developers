@@ -35,8 +35,8 @@ class _AgentCardState extends State<UserCard> {
               context,
               MaterialPageRoute(
                 builder: (context) => AdminChatScreen(
-                  senderUID: authProvider.adminUID,
-                  senderEmail: authProvider.adminEmail,
+                  senderUID: authProvider.adminUID!,
+                  senderEmail: authProvider.adminEmail!,
                   receiverName: widget.user.name,
                   receiverUID: widget.user.uid,
                 ),

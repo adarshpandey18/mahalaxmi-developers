@@ -23,17 +23,29 @@ class AdminChatDesktop extends StatefulWidget {
 
 class _AdminChatDesktopState extends State<AdminChatDesktop> {
   late final TextEditingController textController;
-
+  FocusNode myFocusNode = FocusNode();
   @override
   void initState() {
     super.initState();
     textController = TextEditingController();
+    myFocusNode.addListener(() {
+      if (myFocusNode.hasFocus) {
+        Future.delayed(const Duration(milliseconds: 300), () => scrollDown());
+      }
+    });
   }
 
   @override
   void dispose() {
     textController.dispose();
+    myFocusNode.dispose();
     super.dispose();
+  }
+
+  final ScrollController scrollController = ScrollController();
+  void scrollDown() {
+    scrollController.animateTo(scrollController.position.maxScrollExtent,
+        duration: const Duration(seconds: 1), curve: Curves.fastOutSlowIn);
   }
 
   @override
@@ -77,6 +89,7 @@ class _AdminChatDesktopState extends State<AdminChatDesktop> {
               return Expanded(
                 flex: 9,
                 child: ListView(
+                  controller: scrollController,
                   children: snapshot.data!.docs
                       .map(
                         (doc) => BuildMessageList(
@@ -95,6 +108,7 @@ class _AdminChatDesktopState extends State<AdminChatDesktop> {
               children: [
                 Expanded(
                   child: TextFormField(
+                    focusNode: myFocusNode,
                     controller: textController,
                     decoration: const InputDecoration(
                       hintText: 'Type a message...',
@@ -106,15 +120,17 @@ class _AdminChatDesktopState extends State<AdminChatDesktop> {
                   icon: FontAwesomeIcons.solidPaperPlane,
                   onTap: textController.text.isNotEmpty
                       ? () async {
+                          // Debugging output
+                          // Send the message using the provider
                           await chatProvider.sendMessage(
                             message: textController.text,
                             receiverUID: widget.receiverUID,
                             senderEmail: widget.senderEmail,
                             senderUID: widget.senderUID,
                           );
-                          setState(() {
-                            textController.clear();
-                          });
+
+                          // Clear the text controller to reset the input field
+                          textController.clear();
                         }
                       : () {},
                   text: 'Send',
