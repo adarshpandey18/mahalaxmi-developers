@@ -6,8 +6,13 @@ class AddPropertyDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Add Property'),
+      ),
       body: Column(
-        children: [],
+        children: [
+          
+        ],
       ),
     );
   }

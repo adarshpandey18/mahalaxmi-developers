@@ -29,4 +29,8 @@ class ImageStrings {
 
   // Profile Image 2
   static String profileImage2 = '${ImageStrings.basePath}profile_image_2.jpg';
+
+  //Desktop home page image
+  static String homePageImage =
+      '${ImageStrings.basePath}building_back_facing.JPG';
 }
