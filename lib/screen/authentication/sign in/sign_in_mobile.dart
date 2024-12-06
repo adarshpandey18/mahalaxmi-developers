@@ -103,7 +103,7 @@ class _SignInMobileState extends State<SignInMobile> {
                       Align(
                         alignment: Alignment.topRight,
                         child: GestureDetector(
-                          onTap: () => authProvider.forogtPassowrd(
+                          onTap: () => authProvider.forgotPassword(
                             context: context,
                             email: email.text,
                           ),

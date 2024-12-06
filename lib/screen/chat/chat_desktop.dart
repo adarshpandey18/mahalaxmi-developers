@@ -29,8 +29,8 @@ class _ChatDesktopScreenState extends State<ChatDesktopScreen> {
 
   @override
   void initState() {
-    super.initState();
     textController = TextEditingController();
+    super.initState();
   }
 
   @override
@@ -107,19 +107,16 @@ class _ChatDesktopScreenState extends State<ChatDesktopScreen> {
                 const SizedBox(width: 20),
                 IconCard(
                   icon: FontAwesomeIcons.solidPaperPlane,
-                  onTap: textController.text.isNotEmpty
-                      ? () async {
-                          await chatProvider.sendMessage(
-                            message: textController.text,
-                            receiverUID: widget.receiverUID,
-                            senderEmail: widget.senderEmail,
-                            senderUID: widget.senderUID,
-                          );
-                          setState(() {
-                            textController.clear();
-                          });
-                        }
-                      : () {},
+                  onTap: () async {
+                    await chatProvider.sendMessage(
+                      message: textController.text,
+                      receiverUID: widget.receiverUID,
+                      senderEmail: widget.senderEmail,
+                      senderUID: widget.senderUID,
+                    );
+
+                    textController.clear();
+                  },
                   text: 'Send',
                 ),
               ],

@@ -24,7 +24,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  );
+  ).catchError((e) {
+    print(e.toString());
+  });
   runApp(const MyApp());
 }
 

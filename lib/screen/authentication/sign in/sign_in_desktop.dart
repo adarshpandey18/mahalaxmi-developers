@@ -129,7 +129,7 @@ class _SignInDesktopState extends State<SignInDesktop> {
                           Align(
                             alignment: Alignment.topRight,
                             child: GestureDetector(
-                              onTap: () => authProvider.forogtPassowrd(
+                              onTap: () => authProvider.forgotPassword(
                                 context: context,
                                 email: email.text,
                               ),

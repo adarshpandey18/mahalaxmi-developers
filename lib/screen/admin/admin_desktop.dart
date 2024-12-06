@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mahalaxmi_developers/utils/cateogory/admin_features.dart';
+import 'package:mahalaxmi_developers/utils/admin%20features/admin_features.dart';
 import 'package:mahalaxmi_developers/widgets/feature_container.dart';
 import 'package:mahalaxmi_developers/widgets/logo_widget.dart';
 

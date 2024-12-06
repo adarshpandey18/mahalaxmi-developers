@@ -21,7 +21,8 @@
   <meta name="description" content="A new Flutter project.">
 
   <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="mahalaxmi_developers">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
@@ -33,6 +34,25 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDNJcq99otS2eogIN10ifzoHdU5RxKnu_c",
+      authDomain: "mahalaxmi-developer.firebaseapp.com",
+      projectId: "mahalaxmi-developer",
+      storageBucket: "mahalaxmi-developer.firebasestorage.app",
+      messagingSenderId: "999578971554",
+      appId: "1:999578971554:web:d1d610ba30bf00e07656fb"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
