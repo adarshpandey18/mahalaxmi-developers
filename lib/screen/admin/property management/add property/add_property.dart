@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mahalaxmi_developers/screen/admin/property%20management/add_property_desktop.dart';
-import 'package:mahalaxmi_developers/screen/admin/property%20management/add_property_mobile.dart';
+import 'package:mahalaxmi_developers/screen/admin/property%20management/add%20property/add_property_desktop.dart';
+import 'package:mahalaxmi_developers/screen/admin/property%20management/add%20property/add_property_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class AddPropertyScreen extends StatelessWidget {

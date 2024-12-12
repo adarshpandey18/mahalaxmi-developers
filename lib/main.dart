@@ -8,7 +8,7 @@ import 'package:mahalaxmi_developers/screen/about/about.dart';
 import 'package:mahalaxmi_developers/screen/admin/admin.dart';
 import 'package:mahalaxmi_developers/screen/admin/authentication/admin_authentication.dart';
 import 'package:mahalaxmi_developers/screen/admin/chat/admin_user_list.dart';
-import 'package:mahalaxmi_developers/screen/admin/property%20management/add_property.dart';
+import 'package:mahalaxmi_developers/screen/admin/property%20management/add%20property/add_property.dart';
 import 'package:mahalaxmi_developers/screen/authentication/auth%20landing/auth_landing.dart';
 import 'package:mahalaxmi_developers/screen/authentication/auth_wrapper.dart';
 import 'package:mahalaxmi_developers/screen/authentication/sign%20in/sign_in.dart';
