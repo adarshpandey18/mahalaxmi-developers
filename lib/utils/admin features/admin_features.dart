@@ -11,23 +11,13 @@ class AdminFeatures {
     },
     {
       'name': 'Remove Property',
-      'route': '/remove_property',
+      'route': '/delete_property',
       'iconData': FontAwesomeIcons.solidTrashCan,
-    },
-    {
-      'name': 'Edit Property',
-      'route': '/edit_property',
-      'iconData': FontAwesomeIcons.solidPenToSquare,
     },
     {
       'name': 'Chat with user',
       'route': '/admin_userlist',
       'iconData': FontAwesomeIcons.solidMessage,
     },
-    // {
-    //   'name': 'User Dashboard',
-    //   'route': '/user_dashboard',
-    //   'iconData': FontAwesomeIcons.solidUser,
-    // },
   ];
 }

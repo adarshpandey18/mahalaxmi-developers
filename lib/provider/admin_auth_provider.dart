@@ -5,9 +5,9 @@ import 'package:mahalaxmi_developers/widgets/alert_box.dart';
 class AdminAuthProvider extends ChangeNotifier {
   bool isLoading = false;
   String? errorMessage;
-  String? adminUID; // To hold the dynamic UID
-  String? adminName; // To hold the dynamic name
-  String? adminEmail; // To hold the dynamic email
+  String? adminUID; 
+  String? adminName; 
+  String? adminEmail; 
 
   Future<void> signIn({
     required String email,

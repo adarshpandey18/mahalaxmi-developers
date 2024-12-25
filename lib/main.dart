@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:mahalaxmi_developers/firebase_options.dart';
 import 'package:mahalaxmi_developers/provider/admin_auth_provider.dart';
 import 'package:mahalaxmi_developers/provider/auth_provider.dart';
+import 'package:mahalaxmi_developers/provider/categories_provider.dart';
 import 'package:mahalaxmi_developers/provider/chat_provider.dart';
+import 'package:mahalaxmi_developers/provider/property_provider.dart';
 import 'package:mahalaxmi_developers/screen/about/about.dart';
 import 'package:mahalaxmi_developers/screen/admin/admin.dart';
 import 'package:mahalaxmi_developers/screen/admin/authentication/admin_authentication.dart';
@@ -15,6 +17,7 @@ import 'package:mahalaxmi_developers/screen/authentication/auth_wrapper.dart';
 import 'package:mahalaxmi_developers/screen/authentication/sign%20in/sign_in.dart';
 import 'package:mahalaxmi_developers/screen/authentication/sign%20up/sign_up.dart';
 import 'package:mahalaxmi_developers/screen/agents/agents.dart';
+import 'package:mahalaxmi_developers/screen/categories/categories_screen.dart';
 import 'package:mahalaxmi_developers/screen/contact/contact.dart';
 import 'package:mahalaxmi_developers/screen/home/home_screen.dart';
 import 'package:mahalaxmi_developers/screen/splash%20screen/splash_screen.dart';
@@ -40,6 +43,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => AuthProvider()),
         ChangeNotifierProvider(create: (context) => AdminAuthProvider()),
         ChangeNotifierProvider(create: (context) => ChatProvider()),
+        ChangeNotifierProvider(create: (context) => CategoriesProvider()),
+        ChangeNotifierProvider(create: (context) => PropertyProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -70,6 +75,7 @@ class MyApp extends StatelessWidget {
           '/add_property': (context) => const AddPropertyScreen(),
           '/delete_property': (context) => const DeleteProperty(),
           '/admin_userlist': (context) => const AdminUserList(),
+          '/categories': (context) => const CategoriesScreen(),
         },
       ),
     );
