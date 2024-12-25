@@ -41,14 +41,6 @@ class CustomDrawer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 DrawerListTile(
-                  text: 'Profile',
-                  onTap: () {
-                    Navigator.pushNamed(context, '/profile');
-                  },
-                  iconData: Icons.person,
-                  changeColor: false,
-                ),
-                DrawerListTile(
                   text: 'Categories',
                   onTap: () {
                     Navigator.pushNamed(context, '/categories');
