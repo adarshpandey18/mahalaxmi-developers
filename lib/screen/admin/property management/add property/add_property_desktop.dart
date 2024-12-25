@@ -285,6 +285,19 @@ class _AddPropertyDesktopState extends State<AddPropertyDesktop> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Property Added!')),
                       );
+                      _propertyNameController.clear();
+                      _descriptionController.clear();
+                      _selectedCategory = "";
+                      _selectedBhkConfig = "";
+                      _squareFeetController.clear();
+                      _priceController.clear();
+                      _addressController.clear();
+                      _latitudeController.clear();
+                      _longitudeController.clear();
+                      _amenities.clear();
+                      _contactNumberController.clear();
+                      _whatsappNumberController.clear();
+                      _imageLinkController.clear();
                     }
                   },
                   child: Text(
