@@ -60,136 +60,131 @@ class _SignUpMobileState extends State<SignUpMobile> {
           ? const Center(
               child: CircularProgressIndicator(),
             )
-          : SingleChildScrollView(
-              child: Container(
-                padding: const EdgeInsets.all(25),
-                height: double.infinity,
-                child: Form(
-                  key: _formKey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Sign Up',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.cinzel(
-                          color: AppColors.midnightBlue,
-                          fontSize: 38,
-                          fontWeight: FontWeight.w500,
+          : Container(
+              padding: const EdgeInsets.all(25),
+              height: double.infinity,
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Sign Up',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.cinzel(
+                        color: AppColors.midnightBlue,
+                        fontSize: 38,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    const SizedBox(height: 30),
+                    // Name Text Form Field
+                    TextFormField(
+                      controller: name,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your name';
+                        }
+                        return null;
+                      },
+                      decoration: const InputDecoration(
+                        icon: Icon(Icons.person),
+                        hintText: 'Enter your name here',
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    // Email Text Form Field
+                    TextFormField(
+                      controller: email,
+                      validator: _emailValidator,
+                      decoration: const InputDecoration(
+                        icon: Icon(Icons.email),
+                        hintText: 'Enter your email here',
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    // Password Text Form Field
+                    TextFormField(
+                      controller: password,
+                      validator: _passwordValidator,
+                      decoration: const InputDecoration(
+                        icon: Icon(Icons.lock),
+                        hintText: 'Enter your password here',
+                      ),
+                      obscureText: true,
+                    ),
+                    const SizedBox(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AuthLandingButton(
+                          text: 'Sign Up',
+                          onTap: () {
+                            if (_formKey.currentState!.validate()) {
+                              // Handle signup logic
+                              authProvider.signUp(
+                                name: name.text,
+                                email: email.text,
+                                password: password.text,
+                                context: context,
+                              );
+                            }
+                          },
+                          backgroundColor: null,
                         ),
-                      ),
-                      const SizedBox(height: 30),
-                      // Name Text Form Field
-                      TextFormField(
-                        controller: name,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your name';
-                          }
-                          return null;
-                        },
-                        decoration: const InputDecoration(
-                          icon: Icon(Icons.person),
-                          hintText: 'Enter your name here',
+                      ],
+                    ),
+                    const SizedBox(height: 30),
+                    // Divider with OR text
+                    const CustomDivider(),
+                    const SizedBox(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconCard(
+                          text: 'Google',
+                          icon: FontAwesomeIcons.google,
+                          onTap: () {
+                            authProvider.googleSignIn(context: context);
+                          },
                         ),
-                      ),
-                      const SizedBox(height: 10),
-                      // Email Text Form Field
-                      TextFormField(
-                        controller: email,
-                        validator: _emailValidator,
-                        decoration: const InputDecoration(
-                          icon: Icon(Icons.email),
-                          hintText: 'Enter your email here',
+                        const SizedBox(width: 10),
+                        IconCard(
+                          text: 'Facebook',
+                          icon: FontAwesomeIcons.facebook,
+                          onTap: () {},
                         ),
-                      ),
-                      const SizedBox(height: 10),
-                      // Password Text Form Field
-                      TextFormField(
-                        controller: password,
-                        validator: _passwordValidator,
-                        decoration: const InputDecoration(
-                          icon: Icon(Icons.lock),
-                          hintText: 'Enter your password here',
+                        const SizedBox(width: 10),
+                        IconCard(
+                          text: 'Twitter',
+                          icon: FontAwesomeIcons.twitter,
+                          onTap: () {},
                         ),
-                        obscureText: true,
-                      ),
-                      const SizedBox(height: 30),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          AuthLandingButton(
-                            text: 'Sign Up',
-                            onTap: () {
-                              if (_formKey.currentState!.validate()) {
-                                // Handle signup logic
-                                authProvider.signUp(
-                                  name: name.text,
-                                  email: email.text,
-                                  password: password.text,
-                                  context: context,
-                                );
-                              }
-                            },
-                            backgroundColor: null,
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Already have an account?',
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        GestureDetector(
+                          onTap: () => Navigator.pushNamed(context, '/sign_in'),
+                          child: Text(
+                            ' Sign In',
+                            style:
+                                Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      color: Theme.of(context).primaryColor,
+                                    ),
                           ),
-                        ],
-                      ),
-                      const SizedBox(height: 30),
-                      // Divider with OR text
-                      const CustomDivider(),
-                      const SizedBox(height: 30),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconCard(
-                            text: 'Google',
-                            icon: FontAwesomeIcons.google,
-                            onTap: () {
-                              authProvider.googleSignIn(context: context);
-                            },
-                          ),
-                          const SizedBox(width: 10),
-                          IconCard(
-                            text: 'Facebook',
-                            icon: FontAwesomeIcons.facebook,
-                            onTap: () {},
-                          ),
-                          const SizedBox(width: 10),
-                          IconCard(
-                            text: 'Twitter',
-                            icon: FontAwesomeIcons.twitter,
-                            onTap: () {},
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Already have an account?',
-                            style: Theme.of(context).textTheme.bodyLarge,
-                          ),
-                          GestureDetector(
-                            onTap: () =>
-                                Navigator.pushNamed(context, '/sign_in'),
-                            child: Text(
-                              ' Sign In',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),

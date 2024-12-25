@@ -19,101 +19,99 @@ class AuthLandingMobile extends StatelessWidget {
     final authProvider = Provider.of<AuthProvider>(context);
 
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Center(
-          child: Container(
-            padding: const EdgeInsets.all(25),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  TextStrings.authLandingScreen,
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.cinzel(
-                    color: AppColors.midnightBlue,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w500,
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(25),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                TextStrings.authLandingScreen,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.cinzel(
+                  color: AppColors.midnightBlue,
+                  fontSize: 22,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(height: 30),
+              Lottie.asset(
+                ImageStrings.buildingLottieAnimation,
+                repeat: true,
+                height: 300,
+              ),
+              const SizedBox(height: 30),
+              Row(
+                children: [
+                  AuthLandingButton(
+                    text: 'Sign Up',
+                    backgroundColor: null,
+                    onTap: () => Navigator.pushReplacementNamed(
+                      context,
+                      '/sign_up',
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  AuthLandingButton(
+                    text: 'Sign In',
+                    backgroundColor: null,
+                    onTap: () =>
+                        Navigator.pushReplacementNamed(context, '/sign_in'),
+                  )
+                ],
+              ),
+              const SizedBox(height: 30),
+              // Divider with OR text
+              const CustomDivider(),
+              const SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconCard(
+                    text: 'Google',
+                    icon: FontAwesomeIcons.google,
+                    onTap: () {
+                      authProvider.googleSignIn(context: context);
+                    },
                   ),
-                ),
-                const SizedBox(height: 30),
-                Lottie.asset(
-                  ImageStrings.buildingLottieAnimation,
-                  repeat: true,
-                  height: 300,
-                ),
-                const SizedBox(height: 30),
-                Row(
-                  children: [
-                    AuthLandingButton(
-                      text: 'Sign Up',
-                      backgroundColor: null,
-                      onTap: () => Navigator.pushReplacementNamed(
-                        context,
-                        '/sign_up',
-                      ),
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [
-                    AuthLandingButton(
-                      text: 'Sign In',
-                      backgroundColor: null,
-                      onTap: () =>
-                          Navigator.pushReplacementNamed(context, '/sign_in'),
-                    )
-                  ],
-                ),
-                const SizedBox(height: 30),
-                // Divider with OR text
-                const CustomDivider(),
-                const SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconCard(
-                      text: 'Google',
-                      icon: FontAwesomeIcons.google,
-                      onTap: () {
-                        authProvider.googleSignIn(context: context);
-                      },
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    IconCard(
-                      text: 'Facebook',
-                      icon: FontAwesomeIcons.facebook,
-                      onTap: () {},
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    IconCard(
-                      text: 'Twitter',
-                      icon: FontAwesomeIcons.twitter,
-                      onTap: () {},
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                GestureDetector(
-                  onTap: () => Navigator.pushNamed(
-                    context,
-                    '/admin_authentication',
+                  const SizedBox(
+                    width: 10,
                   ),
-                  child: const Text(
-                    'Are you an Admin?',
+                  IconCard(
+                    text: 'Facebook',
+                    icon: FontAwesomeIcons.facebook,
+                    onTap: () {},
                   ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  IconCard(
+                    text: 'Twitter',
+                    icon: FontAwesomeIcons.twitter,
+                    onTap: () {},
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(
+                  context,
+                  '/admin_authentication',
                 ),
-              ],
-            ),
+                child: const Text(
+                  'Are you an Admin?',
+                ),
+              ),
+            ],
           ),
         ),
       ),

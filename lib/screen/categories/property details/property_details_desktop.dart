@@ -117,47 +117,59 @@ class PropertyDetailsDesktop extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // WhatsApp Button
-              ElevatedButton.icon(
-                onPressed: () async {
-                  final whatsappUrl =
-                      "https://wa.me/${property['whatsappNumber']}";
-                  if (await canLaunchUrl(Uri.parse(whatsappUrl))) {
-                    await launchUrl(Uri.parse(whatsappUrl));
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text("Unable to open WhatsApp")),
-                    );
-                  }
-                },
-                icon: const Icon(FontAwesomeIcons.whatsapp),
-                label: const Text("WhatsApp"),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  foregroundColor: Colors.white,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              Expanded(
+                child: ElevatedButton.icon(
+                  onPressed: () async {
+                    final whatsappUrl =
+                        "https://wa.me/${property['whatsappNumber']}";
+                    if (await canLaunchUrl(Uri.parse(whatsappUrl))) {
+                      await launchUrl(Uri.parse(whatsappUrl));
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                            content: Text("Unable to open WhatsApp")),
+                      );
+                    }
+                  },
+                  icon: const Icon(FontAwesomeIcons.whatsapp),
+                  label: const Text("WhatsApp"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                  ),
                 ),
               ),
 
+              // Space between buttons
+              const SizedBox(
+                width: 50,
+              ),
               // Call Button
-              ElevatedButton.icon(
-                onPressed: () async {
-                  final telUrl = "tel:${property['contactNumber']}";
-                  if (await canLaunchUrl(Uri.parse(telUrl))) {
-                    await launchUrl(Uri.parse(telUrl));
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text("Unable to make a call")),
-                    );
-                  }
-                },
-                icon: const Icon(FontAwesomeIcons.phone),
-                label: const Text("Call"),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blueAccent,
-                  foregroundColor: Colors.white,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              Expanded(
+                child: ElevatedButton.icon(
+                  onPressed: () async {
+                    final telUrl = "tel:${property['contactNumber']}";
+                    if (await canLaunchUrl(Uri.parse(telUrl))) {
+                      await launchUrl(Uri.parse(telUrl));
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text("Unable to make a call")),
+                      );
+                    }
+                  },
+                  icon: const Icon(
+                    FontAwesomeIcons.phone,
+                  ),
+                  label: const Text(
+                    "Call",
+                    textAlign: TextAlign.center,
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    alignment: Alignment.center,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                  ),
                 ),
               ),
             ],
