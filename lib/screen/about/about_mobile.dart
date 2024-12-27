@@ -83,7 +83,7 @@ class AboutMobileScreen extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(),
                   ),
                   Text(
-                    TextStrings.coOwnerDescription,
+                    TextStrings.coOwnerQuote,
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontWeight: FontWeight.bold,
                           fontSize: AppSize.bodyLargeText + 2,

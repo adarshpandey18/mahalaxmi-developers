@@ -190,31 +190,37 @@ class HomeScreenMobile extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
-                        Container(
-                          height: 100,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: AppColors.blueGray,
-                            borderRadius: BorderRadius.circular(8),
+                        GestureDetector(
+                          onTap: () => Navigator.pushReplacementNamed(
+                            context,
+                            '/categories',
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Explore',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .displayLarge!
-                                      .copyWith(
-                                        fontFamily:
-                                            GoogleFonts.cinzel().fontFamily,
-                                      ),
-                                ),
-                                Icon(FontAwesomeIcons.arrowRight),
-                              ],
+                          child: Container(
+                            height: 100,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: AppColors.blueGray,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Explore',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .displayLarge!
+                                        .copyWith(
+                                          fontFamily:
+                                              GoogleFonts.cinzel().fontFamily,
+                                        ),
+                                  ),
+                                  Icon(FontAwesomeIcons.arrowRight),
+                                ],
+                              ),
                             ),
                           ),
                         ),
