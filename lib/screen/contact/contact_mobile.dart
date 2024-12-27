@@ -19,7 +19,9 @@ class ContactMobileScreen extends StatelessWidget {
         child: Column(
           children: [
             const LogoWidget(),
-            const SizedBox(height: 30,),
+            const SizedBox(
+              height: 30,
+            ),
             const Divider(
               endIndent: 20,
               indent: 20,
@@ -58,7 +60,7 @@ class ContactMobileScreen extends StatelessWidget {
               function: () =>
                   hf.launchPhoneNumber(number: TextStrings.phoneNumberLink),
               iconData: FontAwesomeIcons.phone,
-              text: TextStrings.phoneNumer,
+              text: TextStrings.phoneNumber,
             ),
           ],
         ),

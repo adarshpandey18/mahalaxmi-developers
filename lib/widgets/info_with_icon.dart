@@ -45,6 +45,8 @@ class _InfoWithIconState extends State<InfoWithIcon> {
                         ? Theme.of(context).hintColor
                         : Theme.of(context).textTheme.bodyLarge!.color,
                   ),
+              softWrap: true,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ),

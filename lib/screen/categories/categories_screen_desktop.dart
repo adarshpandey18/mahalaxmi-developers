@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:mahalaxmi_developers/screen/categories/property%20details/property_details.dart';
 import 'package:mahalaxmi_developers/utils/constants/colors/app_colors.dart';
+import 'package:mahalaxmi_developers/widgets/custom_footer.dart';
 import 'package:provider/provider.dart';
 
 import 'package:mahalaxmi_developers/provider/auth_provider.dart';
@@ -18,19 +19,22 @@ class CategoriesScreenDesktop extends StatelessWidget {
     var categoriesProvider = Provider.of<CategoriesProvider>(context);
 
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            // Desktop Navbar
-            DesktopNavbar(
+      body: Column(
+        children: [
+          // Desktop Navbar
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: DesktopNavbar(
               authProvider: authProvider,
               currentPage: 'Categories',
             ),
-            const SizedBox(height: 20),
+          ),
+          const SizedBox(height: 20),
 
-            // Main Content
-            Expanded(
+          // Main Content
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
               child: Row(
                 children: [
                   // Categories List
@@ -125,7 +129,8 @@ class CategoriesScreenDesktop extends StatelessWidget {
                                       ),
                                     ),
                                     child: Card(
-                                      elevation: 4,
+                                      surfaceTintColor: AppColors.blueGray,
+                                      elevation: 2,
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(8),
                                       ),
@@ -213,8 +218,9 @@ class CategoriesScreenDesktop extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+          CustomFooter()
+        ],
       ),
     );
   }

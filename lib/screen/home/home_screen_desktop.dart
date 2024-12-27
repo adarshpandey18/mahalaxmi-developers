@@ -117,6 +117,8 @@ class HomeScreenDesktop extends StatelessWidget {
                                           GoogleFonts.cinzel().fontFamily,
                                       fontSize: 24,
                                       fontWeight: FontWeight.bold,
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
                                     ),
                               ),
                               const SizedBox(
@@ -166,7 +168,8 @@ class HomeScreenDesktop extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                             image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage(ImageStrings.nightSideBuilding),
+                              image:
+                                  AssetImage(ImageStrings.buildingBackFacing),
                             ),
                           ),
                         ),
@@ -179,7 +182,7 @@ class HomeScreenDesktop extends StatelessWidget {
                                 height: 30,
                               ),
                               Text(
-                                TextStrings.homeScreenDetail1Title,
+                                TextStrings.homeScreenDetail2Title,
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium!
@@ -188,13 +191,15 @@ class HomeScreenDesktop extends StatelessWidget {
                                           GoogleFonts.cinzel().fontFamily,
                                       fontSize: 24,
                                       fontWeight: FontWeight.bold,
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
                                     ),
                               ),
                               const SizedBox(
                                 height: 20,
                               ),
                               Text(
-                                TextStrings.homeScreenDetail1Body,
+                                TextStrings.homeScreenDetail2Body,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge!
