@@ -89,20 +89,21 @@ class PropertyDetailsDesktop extends StatelessWidget {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 8),
-                  Container(
-                    height: 200,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.grey[300],
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Map Placeholder",
-                        style: TextStyle(fontSize: 16, color: Colors.grey[600]),
-                      ),
-                    ),
-                  ),
+                  // ================ Map Placeholder ======================
+                  // Container(
+                  //   height: 200,
+                  //   width: double.infinity,
+                  //   decoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(10),
+                  //     color: Colors.grey[300],
+                  //   ),
+                  //   child: Center(
+                  //     child: Text(
+                  //       "Map Placeholder",
+                  //       style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),
