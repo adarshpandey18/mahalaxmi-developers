@@ -92,11 +92,11 @@ class PropertyDetailsMobile extends StatelessWidget {
                   const SizedBox(height: 16),
 
                   // Map Placeholder
-                  const Text(
-                    "Location",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 8),
+                  // const Text(
+                  //   "Location",
+                  //   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  // ),
+                  // const SizedBox(height: 8),
                   // ================ MAP PLACEHOLDER ======================
                   // Container(
                   //   height: 200,

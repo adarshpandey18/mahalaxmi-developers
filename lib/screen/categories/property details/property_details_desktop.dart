@@ -84,11 +84,11 @@ class PropertyDetailsDesktop extends StatelessWidget {
                   const SizedBox(height: 16),
 
                   // Map Location
-                  const Text(
-                    "Location",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 8),
+                  // const Text(
+                  //   "Location",
+                  //   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  // ),
+                  // const SizedBox(height: 8),
                   // ================ Map Placeholder ======================
                   // Container(
                   //   height: 200,
